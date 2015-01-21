@@ -1,0 +1,254 @@
+//Создание массива коэффициентов
+koef=new Array(13);
+
+// Функция округления до двух знаков после запятой
+function okrugl(x,n){
+var tochnost=Math.pow(10,n);
+var y=(Math.round(x*tochnost))/tochnost;
+return y;
+}
+
+
+// Проверка сохранности массива коэффициентов
+function probaK() {
+for (var i=1;i<12;i++){
+alert(koef[i]);
+}
+}
+
+//Функция скрытия и отображения нужных для расчета строк квитанции
+function proba() {
+//Обнуление коэффициентов
+for(var i=0;i<12;i++) {koef[i]=0;}
+
+$('#test1').css({color:'green'});
+//var row11=document.parametres.row1.checked;
+//$('#test1').hide();
+//alert("success "+row11);
+//if (document.parametres.prov1.checked) {alert("success ");}
+if (!(document.parametres.prov1.checked)) {$('#rows1').hide(); koef[1]=0;};
+if (!(document.parametres.prov2.checked)) {$('#rows2').hide(); koef[2]=0;};
+if (!(document.parametres.prov3.checked)) {$('#rows3').hide(); koef[3]=0};
+if (!(document.parametres.prov4.checked)) {$('#rows4').hide(); koef[4]=0};
+if (!(document.parametres.prov5.checked)) {$('#rows5').hide(); koef[5]=0};
+if (!(document.parametres.prov6.checked)) {$('#rows6').hide(); koef[6]=0};
+if (!(document.parametres.prov7.checked)) {$('#rows7').hide(); koef[7]=0};
+if (!(document.parametres.prov8.checked)) {$('#rows8').hide(); koef[8]=0};
+if (!(document.parametres.prov9.checked)) {$('#rows9').hide(); koef[9]=0};
+if (!(document.parametres.prov10.checked)) {$('#rows10').hide(); koef[10]=0};
+if (!(document.parametres.prov11.checked)) {$('#rows11').hide(); koef[11]=0};
+if ((document.parametres.prov1.checked)) {$('#rows1').show(); koef[1]=1;}
+if ((document.parametres.prov2.checked)) {$('#rows2').show(); koef[2]=1;}
+if ((document.parametres.prov3.checked)) {$('#rows3').show(); koef[3]=1;}
+if ((document.parametres.prov4.checked)) {$('#rows4').show(); koef[4]=1;}
+if ((document.parametres.prov5.checked)) {$('#rows5').show(); koef[5]=1;}
+if ((document.parametres.prov6.checked)) {$('#rows6').show(); koef[6]=1;}
+if ((document.parametres.prov7.checked)) {$('#rows7').show(); koef[7]=1;}
+if ((document.parametres.prov8.checked)) {$('#rows8').show(); koef[8]=1;}
+if ((document.parametres.prov9.checked)) {$('#rows9').show(); koef[9]=1;}
+if ((document.parametres.prov10.checked)) {$('#rows10').show(); koef[10]=1;}
+if ((document.parametres.prov11.checked)) {$('#rows11').show(); koef[11]=1;}
+return koef;
+}
+
+//Функция подсчета стоимости коммунальных услуг 
+function messme() {
+//var koef1, koef2, koef3, koef4, koef5, koef6, koef7, koef8, koef9, koef10, koef11;
+// Тарифы минимальные - константы
+var tarif1=2.07*100; // квартплата 100m2
+var tarif2=0.3084; // электро
+var tarif3=1.089; // газ
+var tarif4=3.372; // вода
+var tarif5=2.136; // стоки
+var tarif6=3.48*100; // отопление 100m2
+var tarif7=17.58; // горячая вода
+var tarif8=14.43*3; // вывоз тбо за 3 человек
+var tarif9=150; // УГСО
+var tarif10=39.91; // телефон
+var tarif11=7.00; // домофон
+
+//Расчет платежей за каждую услугу
+//Квартплата
+var plata1=okrugl(tarif1,2); //квартплата
+//document.getElementById('bFlat').innerHTML=Math.floor(tarif1)+"-"+Math.floor((tarif1).toFixed(2).slice(2));
+document.getElementById('bFlat').innerHTML=plata1;
+
+//Стоимость электроэнерги
+var a2=document.forms.formaSchet.Electro1.value;
+var b2=document.forms.formaSchet.Electro2.value;
+/*var c2=b2-a2;
+var c21=parseInt(c2);
+var c22=(c2%1).toFixed(2).slice(2);
+var d2=c2*tarif2;
+var plata2=d2 //электроэнергия
+var d21=parseInt(d2); 
+var d22=(d2%1).toFixed(2).slice(2); 
+document.getElementById('sElectro').innerHTML=c21+"."+c22;
+document.getElementById('bElectro').innerHTML=Math.floor(d21)+"-"+Math.floor(d22);
+*/
+var c2=okrugl((okrugl(b2,2)-okrugl(a2,2)),2);
+var d2=c2*tarif2;
+var plata2=okrugl(d2,2); //электроэнергия
+document.getElementById('sElectro').innerHTML=c2;
+document.getElementById('bElectro').innerHTML=plata2;
+	
+//Стоимость природного газа
+var a3=document.forms.formaSchet.Gas1.value;
+var b3=document.forms.formaSchet.Gas2.value;
+/*var c3=b3-a3;
+var c31=parseInt(c2);
+var c32=(c3%1).toFixed(2).slice(2);
+var d3=c3*tarif3;
+var plata3=d3;//газ
+var d31=parseInt(d3); 
+var d32=(d3%1).toFixed(2).slice(2); 
+document.getElementById('sGas').innerHTML=c31+"."+c32;
+document.getElementById('bGas').innerHTML=Math.floor(d31)+"-"+Math.floor(d32);*/
+var c3=okrugl((okrugl(b3,2)-okrugl(a3,2)),2);
+var d3=c3*tarif3;
+var plata3=okrugl(d3,2); //природный газ
+document.getElementById('sGas').innerHTML=c3;
+document.getElementById('bGas').innerHTML=plata3;
+
+//Стоимость холодной воды
+var a4=document.forms.formaSchet.Water1.value;
+var b4=document.forms.formaSchet.Water2.value;
+/* var c4=b4-a4;
+var c41=parseInt(c4);
+var c42=(c4%1).toFixed(2).slice(2);
+var d4=c3*tarif4;
+var plata4=d4;//вода
+var d41=parseInt(d4); 
+var d42=(d4%1).toFixed(2).slice(2); 
+document.getElementById('sWater').innerHTML=c41+"."+c42;
+document.getElementById('bWater').innerHTML=Math.floor(d41)+"-"+Math.floor(d42); */
+var c4=okrugl((okrugl(b4,2)-okrugl(a4,2)),2);
+var d4=c4*tarif4;
+var plata4=okrugl(d4,2); //Холодная вода
+document.getElementById('sWater').innerHTML=c4;
+document.getElementById('bWater').innerHTML=plata4;
+
+//Стоимость стоков
+var d5=c4*tarif5;
+var plata5=okrugl(d5,2); //Стоки
+//document.getElementById('bStoki').innerHTML=Math.floor(tarif5)+"-"+Math.floor((tarif5).toFixed(2).slice(2));
+document.getElementById('bStoki').innerHTML=plata5;
+
+//Стоимость отопления
+var plata6=okrugl(tarif6,2); //Отопление
+//document.getElementById('bOtoplenie').innerHTML=Math.floor(tarif6)+"-"+Math.floor((tarif6).toFixed(2).slice(2));
+document.getElementById('bOtoplenie').innerHTML=plata6;
+
+//Стоимость горячей воды
+var a7=document.forms.formaSchet.Hwater1.value;
+var b7=document.forms.formaSchet.Hwater2.value;
+/*var c7=b7-a7;
+var c71=parseInt(c7);
+var c72=(c7%1).toFixed(2).slice(2);
+var d7=c7*tarif7;
+var plata7=d7;//Горячая вода
+var d71=parseInt(d7); 
+var d72=(d7%1).toFixed(2).slice(2); 
+document.getElementById('sHwater').innerHTML=c71+"."+c72;
+document.getElementById('bHwater').innerHTML=Math.floor(d71)+"-"+Math.floor(d72);*/
+var c7=okrugl((okrugl(b7,2)-okrugl(a7,2)),2);
+var d7=c7*tarif7;
+var plata7=okrugl(d7,2); //горячая вода
+document.getElementById('sHwater').innerHTML=c7;
+document.getElementById('bHwater').innerHTML=plata7;
+
+//Стоимость вывоза ТБО
+var plata8=okrugl(tarif8,2); //Вывоз ТБО
+//document.getElementById('bTBO').innerHTML=Math.floor(tarif8)+"-"+Math.floor((tarif8).toFixed(2).slice(2));
+document.getElementById('bTBO').innerHTML=plata8;
+
+//Стоимость услуг охраны
+var plata9=okrugl(tarif9,2); //Услуги УГСО 
+//document.getElementById('bUGSO').innerHTML=Math.floor(tarif9)+"-"+Math.floor((tarif9).toFixed(2).slice(2));
+document.getElementById('bUGSO').innerHTML=plata9;
+
+//Стоимость телефона
+var plata10=okrugl(tarif10,2); //Телефон
+//document.getElementById('bTelephon').innerHTML=Math.floor(tarif10)+"-"+Math.floor((tarif10).toFixed(2).slice(2));
+document.getElementById('bTelephon').innerHTML=plata10;
+
+//Стоимость домофона
+var plata11=okrugl(tarif11,2); //Домофон
+//document.getElementById('bDomophon').innerHTML=Math.floor(tarif11)+"-"+Math.floor((tarif11).toFixed(2).slice(2));
+document.getElementById('bDomophon').innerHTML=plata11;
+
+//Итоговая сумма платежа
+var itogo=plata1*koef[1]+plata2*koef[2]+plata3*koef[3]+plata4*koef[4]+plata5*koef[5]+plata6*koef[6]+plata7*koef[7]+plata8*koef[8]+plata9*koef[9]+plata10*koef[10]+plata11*koef[11];
+var platasum=okrugl(itogo,2);
+//document.getElementById('bItogo').innerHTML=Math.floor(itogo)+"-"+Math.floor((itogo).toFixed(2).slice(2));
+document.getElementById('bItogo').innerHTML=platasum;
+
+// ---------------------------------------------------------------------архив--------------------
+function messme2(x1,x2,k,y1,y2) {
+var a1=document.formaSchet.x1.value;
+var b1=document.formaSchet.x2.value;
+var c1=b1-a1;
+var c11=parseInt(c1);
+var c12=(c1%1).toFixed(2).slice(2);
+var d1=c1*k;
+var d11=parseInt(d1); // С†РµР»РѕРµ
+var d12=(d1%1).toFixed(2).slice(2); // РґСЂРѕР±СЊ
+document.getElementById('sElectro').innerHTML=c11+"."+c12;
+document.getElementById('bElectro').innerHTML=Math.floor(d11)+"-"+Math.floor(d12);
+}
+
+/* -----------------------------------------------------------------------------------------------
+
+var billDate=new Date();
+billMonth=billDate.month();
+
+document.getElementById('date').innerHTML=billMonth;
+-- */
+
+/*
+var a2=document.formaSchet.firstGas.value;
+var b2=document.formaSchet.secondGaz.value;
+var c2=b2-a2;
+var d2=c1*1.089;
+var d21=parseInt(d2); // С†РµР»РѕРµ
+var d22=(d1%1).toFixed(2).slice(2); // РґСЂРѕР±СЊ
+document.getElementById('sumGas').innerHTML=c2;
+document.getElementById('billGas').innerHTML=Math.floor(d21)+"-"+Math.floor(d22);
+
+var a3=document.formaSchet.firstWater.value;
+var b3=document.formaSchet.secondWater.value;
+var c3=b3-a3;
+var d3=c1*0.3084;
+var d31=parseInt(d3); // С†РµР»РѕРµ
+var d32=(d1%1).toFixed(2).slice(2); // РґСЂРѕР±СЊ
+document.getElementById('sumWater').innerHTML=c3;
+document.getElementById('billWater').innerHTML=Math.floor(d31)+"-"+Math.floor(d32);
+
+var a4=document.formaSchet.firstHwater.value;
+var b4=document.formaSchet.secondHwater.value;
+var c4=b4-a4;
+var d4=c4*0.3084;
+var d41=parseInt(d4); // С†РµР»РѕРµ
+var d42=(d1%1).toFixed(2).slice(2); // РґСЂРѕР±СЊ
+document.getElementById('sumHwater').innerHTML=c4;
+document.getElementById('billHwater').innerHTML=Math.floor(d41)+"-"+Math.floor(d42);
+
+
+
+
+var re1=document.getElementById('fe');
+var re2=document.createElement('p');
+p.innerHTML='New building';
+re1.appendChild(re2);
+
+document.getElementById("re").appendChild(a);
+
+document.getElementById('re').innerHTML=a;
+
+alert("Your are right : "+a);
+
+document.all.re.innerHTML=a;
+*/
+
+
+}
