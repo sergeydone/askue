@@ -1,10 +1,8 @@
 ﻿var h=navigator.cookieEnabled;  // проверка поддержка cookie браузером
+//var tarif="min"; // установка минимального тарифа для расчета
 
-function saveCookie(cname,cvalue) {
+function saveCookie(cname,cvalue) {  //Сохранение кукисов
 document.cookie=""+cname+"="+cvalue+"; max-age="+(60*60*2);
-//document.cookie="askuename=Иван"+"; max-age="+(60*60*2);
-//document.cookie="askuelname=Иванов"+"; max-age="+(60*60*2);
-//document.cookie="askuecod=123456"+"; max-age="+(60*60*2);
 }
 
 
@@ -89,7 +87,7 @@ document.getElementById('rec3').value=readCookie('askuecode');}
 //Обнуление коэффициентов
 for(var i=0;i<12;i++) {koef[i]=0;}
 
-$('#test1').css({color:'green'});
+//$('#test1').css({color:'green'});
 //var row11=document.parametres.row1.checked;
 //$('#test1').hide();
 //alert("success "+row11);
@@ -124,14 +122,19 @@ if ((document.parametres.prov8.checked)) {$('#rows8').show(); koef[8]=1;}
 if ((document.parametres.prov9.checked)) {$('#rows9').show(); koef[9]=1;}
 if ((document.parametres.prov10.checked)) {$('#rows10').show(); koef[10]=1;}
 if ((document.parametres.prov11.checked)) {$('#rows11').show(); koef[11]=1;}
+var tarif="max";
+koef.tarif=tarif;
+var city=document.parametres.provcity.value;
+koef.city=city;
 return koef;
 
 }
 
 //Функция подсчета стоимости коммунальных услуг 
 function messme() {
-//var koef1, koef2, koef3, koef4, koef5, koef6, koef7, koef8, koef9, koef10, koef11;
-// Тарифы минимальные - константы
+var city=koef.city;
+// Тарифы Донецка - константы
+if (city=="Донецк") {
 var tarif1=2.07*100; // квартплата 100m2
 var tarif2=0.3084; // электро
 var tarif3=1.089; // газ
@@ -143,7 +146,35 @@ var tarif8=14.43*3; // вывоз тбо за 3 человек
 var tarif9=150; // УГСО
 var tarif10=39.91; // телефон
 var tarif11=7.00; // домофон
-
+}
+// Тарифы Мариуполя - константы
+if (city=="Мариуполь") {
+var tarif1=2.07*100*2; // квартплата 100m2
+var tarif2=0.3084; // электро
+var tarif3=1.089; // газ
+var tarif4=3.372*2; // вода
+var tarif5=2.136*2; // стоки
+var tarif6=3.48*100*2; // отопление 100m2
+var tarif7=17.58*2; // горячая вода
+var tarif8=14.43*3*2; // вывоз тбо за 3 человек
+var tarif9=150*2; // УГСО
+var tarif10=39.91*2; // телефон
+var tarif11=7.00; // домофон
+}
+// Тарифы Красноармейска - константы
+if (city=="Красноармейск") {
+var tarif1=2.07*100*3; // квартплата 100m2
+var tarif2=0.3084; // электро
+var tarif3=1.089; // газ
+var tarif4=3.372*3; // вода
+var tarif5=2.136*3; // стоки
+var tarif6=3.48*100*3; // отопление 100m2
+var tarif7=17.58*3; // горячая вода
+var tarif8=14.43*3*3; // вывоз тбо за 3 человек
+var tarif9=150*3; // УГСО
+var tarif10=39.91*3; // телефон
+var tarif11=7.00*3; // домофон
+}
 //Расчет платежей за каждую услугу
 //Квартплата
 var plata1=okrugl(tarif1,2); //квартплата

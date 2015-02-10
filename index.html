@@ -78,13 +78,13 @@
 					
 					
 					<label for="name">Город: </label>
-						<select class="form-control">
-							<option value="1" selected> Донецк</option>
-							<option value="2"> Мариуполь</option>
-							<option value="1"> Красноармейск</option>
+						<select id="provcity" class="form-control" onChange="proba(), messme()">
+							<option value="Донецк"> Донецк</option>
+							<option value="Мариуполь"> Мариуполь</option>
+							<option value="Красноармейск"> Красноармейск</option>
 						</select>
 					</div>
-					<div class="form-group">
+					<!--<div class="form-group">
 						<label>Период оплаты: </label>
 						<select class="form-control">
 							<option value="1">Январь</option>
@@ -101,6 +101,7 @@
 							<option value="12" selected>Декабрь</option>
 						</select>
 					</div>
+					-->
 					<label>Оплачиваемые услуги: </label>
 					<div class="checkbox"><label><input type="checkbox" id="prov1" value="" data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> Квартплата</div>
 					<div class="checkbox"><label><input type="checkbox" id="prov2" value="" checked data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> Эл.энергия</div>
