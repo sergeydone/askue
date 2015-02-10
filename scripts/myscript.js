@@ -1,3 +1,36 @@
+﻿var h=navigator.cookieEnabled;  // проверка поддержка cookie браузером
+
+function saveCookie(cname,cvalue) {
+document.cookie=""+cname+"="+cvalue+"; max-age="+(60*60*2);
+//document.cookie="askuename=Иван"+"; max-age="+(60*60*2);
+//document.cookie="askuelname=Иванов"+"; max-age="+(60*60*2);
+//document.cookie="askuecod=123456"+"; max-age="+(60*60*2);
+}
+
+
+
+function readCookie(cookiename) {   //функция чтения значения из куки
+//alert("cookiename="+cookiename)
+var allcookies=document.cookie;
+//alert("full value="+allcookies);
+var temp=allcookies.indexOf(cookiename);
+if (temp!=-1) { //alert("start to work");
+var beginingvalue=temp+0; // начало значения
+var endingvalue=allcookies.indexOf(";",beginingvalue); //окончание значения
+if (endingvalue==-1) {endingvalue=allcookies.length; }//alert("endingvalue= "+endingvalue);}
+var beginname=allcookies.substring(beginingvalue, endingvalue);
+var value=beginname;
+//alert("value1= "+value);
+var allvalue=value.split("=");
+//alert("value2 = "+allvalue[1]);
+return allvalue[1];
+}
+else return false;//alert("value not defined");		
+}
+
+
+
+
 //Создание массива коэффициентов
 koef=new Array(13);
 
@@ -8,16 +41,51 @@ var y=(Math.round(x*tochnost))/tochnost;
 return y;
 }
 
+//фукция сохранения параметров клиента в кукисы
+function saveParametr(){
+//alert("saving work");
+var recname=document.forms.formaRecord.rec1.value;
+saveCookie('askuename',recname);
+var reclname=document.forms.formaRecord.rec2.value;
+saveCookie('askuelname',reclname);
+var reccod=document.forms.formaRecord.rec3.value;
+saveCookie('askuecode',reccod);
+//alert("wow = "+fname);
+//alert("");
+}
 
-// Проверка сохранности массива коэффициентов
+
+
+// Проверка сохранности массива коэффициентов сначала. Теперь тестовая проверка
 function probaK() {
-for (var i=1;i<12;i++){
-alert(koef[i]);
+//for (var i=1;i<12;i++){
+//alert(koef[i]);
+var allcookies=document.cookie;
+alert("full value="+allcookies);
+
 }
+
+function toStart() {   //функция запускающая начало вычислений
+proba();
+//saveCookie(); //('askuename','Ivan');
+//readCookie('askuename');
 }
+
 
 //Функция скрытия и отображения нужных для расчета строк квитанции
 function proba() {
+//-----Блок автозаполнения колонок---------------------------------------------------------------------------------------
+if (readCookie('askuename')) { 
+document.getElementById('rec1').value=readCookie('askuename');} 
+if (readCookie('askuelname')) { 
+document.getElementById('rec2').value=readCookie('askuelname');} 
+if (readCookie('askuecode')) { 
+document.getElementById('rec3').value=readCookie('askuecode');} 
+
+//-----Конец блока автозаполнения колонок-----------------------------------------------------------------------------------------
+
+
+	
 //Обнуление коэффициентов
 for(var i=0;i<12;i++) {koef[i]=0;}
 
@@ -26,6 +94,14 @@ $('#test1').css({color:'green'});
 //$('#test1').hide();
 //alert("success "+row11);
 //if (document.parametres.prov1.checked) {alert("success ");}
+if (h) { 
+document.getElementById('primechanie').innerHTML="*все готово к вычислениям"; 
+document.getElementById('primechanie').style="color:green"; 
+}
+else { 
+document.getElementById('primechanie').innerHTML="*сохранение значений не поддеживается вашим браузером"; 
+document.getElementById('primechanie').style="color:red"; 
+}
 if (!(document.parametres.prov1.checked)) {$('#rows1').hide(); koef[1]=0;};
 if (!(document.parametres.prov2.checked)) {$('#rows2').hide(); koef[2]=0;};
 if (!(document.parametres.prov3.checked)) {$('#rows3').hide(); koef[3]=0};
@@ -49,6 +125,7 @@ if ((document.parametres.prov9.checked)) {$('#rows9').show(); koef[9]=1;}
 if ((document.parametres.prov10.checked)) {$('#rows10').show(); koef[10]=1;}
 if ((document.parametres.prov11.checked)) {$('#rows11').show(); koef[11]=1;}
 return koef;
+
 }
 
 //Функция подсчета стоимости коммунальных услуг 
@@ -182,73 +259,6 @@ var itogo=plata1*koef[1]+plata2*koef[2]+plata3*koef[3]+plata4*koef[4]+plata5*koe
 var platasum=okrugl(itogo,2);
 //document.getElementById('bItogo').innerHTML=Math.floor(itogo)+"-"+Math.floor((itogo).toFixed(2).slice(2));
 document.getElementById('bItogo').innerHTML=platasum;
-
-// ---------------------------------------------------------------------архив--------------------
-function messme2(x1,x2,k,y1,y2) {
-var a1=document.formaSchet.x1.value;
-var b1=document.formaSchet.x2.value;
-var c1=b1-a1;
-var c11=parseInt(c1);
-var c12=(c1%1).toFixed(2).slice(2);
-var d1=c1*k;
-var d11=parseInt(d1); // С†РµР»РѕРµ
-var d12=(d1%1).toFixed(2).slice(2); // РґСЂРѕР±СЊ
-document.getElementById('sElectro').innerHTML=c11+"."+c12;
-document.getElementById('bElectro').innerHTML=Math.floor(d11)+"-"+Math.floor(d12);
-}
-
-/* -----------------------------------------------------------------------------------------------
-
-var billDate=new Date();
-billMonth=billDate.month();
-
-document.getElementById('date').innerHTML=billMonth;
--- */
-
-/*
-var a2=document.formaSchet.firstGas.value;
-var b2=document.formaSchet.secondGaz.value;
-var c2=b2-a2;
-var d2=c1*1.089;
-var d21=parseInt(d2); // С†РµР»РѕРµ
-var d22=(d1%1).toFixed(2).slice(2); // РґСЂРѕР±СЊ
-document.getElementById('sumGas').innerHTML=c2;
-document.getElementById('billGas').innerHTML=Math.floor(d21)+"-"+Math.floor(d22);
-
-var a3=document.formaSchet.firstWater.value;
-var b3=document.formaSchet.secondWater.value;
-var c3=b3-a3;
-var d3=c1*0.3084;
-var d31=parseInt(d3); // С†РµР»РѕРµ
-var d32=(d1%1).toFixed(2).slice(2); // РґСЂРѕР±СЊ
-document.getElementById('sumWater').innerHTML=c3;
-document.getElementById('billWater').innerHTML=Math.floor(d31)+"-"+Math.floor(d32);
-
-var a4=document.formaSchet.firstHwater.value;
-var b4=document.formaSchet.secondHwater.value;
-var c4=b4-a4;
-var d4=c4*0.3084;
-var d41=parseInt(d4); // С†РµР»РѕРµ
-var d42=(d1%1).toFixed(2).slice(2); // РґСЂРѕР±СЊ
-document.getElementById('sumHwater').innerHTML=c4;
-document.getElementById('billHwater').innerHTML=Math.floor(d41)+"-"+Math.floor(d42);
-
-
-
-
-var re1=document.getElementById('fe');
-var re2=document.createElement('p');
-p.innerHTML='New building';
-re1.appendChild(re2);
-
-document.getElementById("re").appendChild(a);
-
-document.getElementById('re').innerHTML=a;
-
-alert("Your are right : "+a);
-
-document.all.re.innerHTML=a;
-*/
 
 
 }

@@ -1,8 +1,9 @@
-<!DOCTYPE html>
-<!-- Коммунальные платежи домовладения или квартиры -->
+п»ї<!DOCTYPE html>
+<!-- РљРѕРјРјСѓРЅР°Р»СЊРЅС‹Рµ РїР»Р°С‚РµР¶Рё РґРѕРјРѕРІР»Р°РґРµРЅРёСЏ РёР»Рё РєРІР°СЂС‚РёСЂС‹ -->
 <html>
 <head>
-<meta content="text/html; charset=utf-8">
+<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8">-->
+<meta charset="U-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="styles/bootstrap.min.css">
 <link rel="stylesheet" href="styles/bootstrap-toggle.min.css">
@@ -11,44 +12,44 @@
 <script src="scripts/bootstrap.min.js"></script>
 <script src="scripts/bootstrap-toggle.min.js"></script>
 <script src="scripts/myscript.js"></script>
-<meta name="description" content="Образец шаблона сайта bootstrap">
-<meta name="keywords" content="bootstrap, шаблон сайта">
-<title> Расчет стоимости коммунальных платежей </title>
+<meta name="description" content="РћР±СЂР°Р·РµС† С€Р°Р±Р»РѕРЅР° СЃР°Р№С‚Р° bootstrap">
+<meta name="keywords" content="bootstrap, С€Р°Р±Р»РѕРЅ СЃР°Р№С‚Р°">
+<title> Р Р°СЃС‡РµС‚ СЃС‚РѕРёРјРѕСЃС‚Рё РєРѕРјРјСѓРЅР°Р»СЊРЅС‹С… РїР»Р°С‚РµР¶РµР№ </title>
 </head>
-<body onLoad="proba()">
+<body onLoad="toStart()">
 	<div class="container">
 		<div class="row header">
 			<div class="col-xs-12">
-				<div class="logotip"><h1><a href="index.html">АСКУЭ</a>...бесплатно</h1></div>
+				<div class="logotip"><h1><a href="index.html">РђРЎРљРЈР­</a>...Р±РµСЃРїР»Р°С‚РЅРѕ</h1></div>
 				<ul class="nav nav-pills pull-left freespace">
-					<li><a href="index.html">Главная</a></li>
-					<li><a class="dropdown-toggle" id="dropdownmenu1" data-toggle="dropdown" href="index.html"> Бесплатные услуги </a>
+					<li><a href="index.html">Р“Р»Р°РІРЅР°СЏ</a></li>
+					<li><a class="dropdown-toggle" id="dropdownmenu1" data-toggle="dropdown" href="index.html"> Р‘РµСЃРїР»Р°С‚РЅС‹Рµ СѓСЃР»СѓРіРё </a>
 						<ul class="dropdown-menu " role="menu" aria-labelledby="dropdownmenu1">
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Расчет коммунальных платежей для частных лиц</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Р Р°СЃС‡РµС‚ РєРѕРјРјСѓРЅР°Р»СЊРЅС‹С… РїР»Р°С‚РµР¶РµР№ РґР»СЏ С‡Р°СЃС‚РЅС‹С… Р»РёС†</a></li>
 							
 						</ul>
 					</li>
-					<!--<li><a class="dropdown-toggle" id="dropdownmenu2" data-toggle="dropdown" href="#">Платные услуги</a>
+					<!--<li><a class="dropdown-toggle" id="dropdownmenu2" data-toggle="dropdown" href="#">РџР»Р°С‚РЅС‹Рµ СѓСЃР»СѓРіРё</a>
 						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownmenu2">
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Разработка индивидуальных отчетных форм</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Подготовка приложений к договору на поставку электрической энергии</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="concept.html">Концептуализация автоматизированной системы коммерческого учета электроэнергии</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Р Р°Р·СЂР°Р±РѕС‚РєР° РёРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹С… РѕС‚С‡РµС‚РЅС‹С… С„РѕСЂРј</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">РџРѕРґРіРѕС‚РѕРІРєР° РїСЂРёР»РѕР¶РµРЅРёР№ Рє РґРѕРіРѕРІРѕСЂСѓ РЅР° РїРѕСЃС‚Р°РІРєСѓ СЌР»РµРєС‚СЂРёС‡РµСЃРєРѕР№ СЌРЅРµСЂРіРёРё</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="concept.html">РљРѕРЅС†РµРїС‚СѓР°Р»РёР·Р°С†РёСЏ Р°РІС‚РѕРјР°С‚РёР·РёСЂРѕРІР°РЅРЅРѕР№ СЃРёСЃС‚РµРјС‹ РєРѕРјРјРµСЂС‡РµСЃРєРѕРіРѕ СѓС‡РµС‚Р° СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё</a></li>
 						</ul>
 					</li>-->
-					<li><a class="dropdown-toggle" id="dropdownmenu3" data-toggle="dropdown" href="#">Аутсорсинг</a>
+					<li><a class="dropdown-toggle" id="dropdownmenu3" data-toggle="dropdown" href="#">РђСѓС‚СЃРѕСЂСЃРёРЅРі</a>
 						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownmenu3">
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">Администрирование информационных систем</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">Параметрицация многофункциональных приборов учета</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">Расчет потребления электрической энергии пром. предприятия</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">Расчет потерь электрической энергии в двухобомоточном трансформаторе</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">Расчет потерь электрической энергии в трехобмоточном автотрансформаторе</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">Расчет стоимости услуг по компенсации реактивной мощности</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">Расчет стоимости транспортировки электрической энергии</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">Расчет величины недоучета электрической энергии</a></li>	
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">РђРґРјРёРЅРёСЃС‚СЂРёСЂРѕРІР°РЅРёРµ РёРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹С… СЃРёСЃС‚РµРј</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">РџР°СЂР°РјРµС‚СЂРёС†Р°С†РёСЏ РјРЅРѕРіРѕС„СѓРЅРєС†РёРѕРЅР°Р»СЊРЅС‹С… РїСЂРёР±РѕСЂРѕРІ СѓС‡РµС‚Р°</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">Р Р°СЃС‡РµС‚ РїРѕС‚СЂРµР±Р»РµРЅРёСЏ СЌР»РµРєС‚СЂРёС‡РµСЃРєРѕР№ СЌРЅРµСЂРіРёРё РїСЂРѕРј. РїСЂРµРґРїСЂРёСЏС‚РёСЏ</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">Р Р°СЃС‡РµС‚ РїРѕС‚РµСЂСЊ СЌР»РµРєС‚СЂРёС‡РµСЃРєРѕР№ СЌРЅРµСЂРіРёРё РІ РґРІСѓС…РѕР±РѕРјРѕС‚РѕС‡РЅРѕРј С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂРµ</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">Р Р°СЃС‡РµС‚ РїРѕС‚РµСЂСЊ СЌР»РµРєС‚СЂРёС‡РµСЃРєРѕР№ СЌРЅРµСЂРіРёРё РІ С‚СЂРµС…РѕР±РјРѕС‚РѕС‡РЅРѕРј Р°РІС‚РѕС‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂРµ</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">Р Р°СЃС‡РµС‚ СЃС‚РѕРёРјРѕСЃС‚Рё СѓСЃР»СѓРі РїРѕ РєРѕРјРїРµРЅСЃР°С†РёРё СЂРµР°РєС‚РёРІРЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">Р Р°СЃС‡РµС‚ СЃС‚РѕРёРјРѕСЃС‚Рё С‚СЂР°РЅСЃРїРѕСЂС‚РёСЂРѕРІРєРё СЌР»РµРєС‚СЂРёС‡РµСЃРєРѕР№ СЌРЅРµСЂРіРёРё</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">Р Р°СЃС‡РµС‚ РІРµР»РёС‡РёРЅС‹ РЅРµРґРѕСѓС‡РµС‚Р° СЌР»РµРєС‚СЂРёС‡РµСЃРєРѕР№ СЌРЅРµСЂРіРёРё</a></li>	
 						</ul>
 					</li>
-					<!-- <li><a href="#">Загрузки</a></li> -->
-					<li><a href="contact.html">Контакты</a></li> 
+					<!-- <li><a href="#">Р—Р°РіСЂСѓР·РєРё</a></li> -->
+					<li><a href="contact.html">РљРѕРЅС‚Р°РєС‚С‹</a></li> 
 					
 				</ul>
 					
@@ -58,13 +59,15 @@
 	
 		<div class="row">
 			<div class="col-xs-12">
-				<span class="divider"><br></span>
+				<span class="divider"></span>
+				
 			</div>
+			
 		</div>
 		
 		<div class="row">
 			<div class="col-xs-3">
-				<button class="btn btn-success">Выполнить<br>расчет <br> коммунальных <br>платежей <br>для <br>квартиры <br> или <br>домовладения</button>
+				<button class="btn btn-success" onClick="probaK();">Р’С‹РїРѕР»РЅРёС‚СЊ<br>СЂР°СЃС‡РµС‚ <br> РєРѕРјРјСѓРЅР°Р»СЊРЅС‹С… <br>РїР»Р°С‚РµР¶РµР№ <br>РґР»СЏ <br>РєРІР°СЂС‚РёСЂС‹ <br> РёР»Рё <br>РґРѕРјРѕРІР»Р°РґРµРЅРёСЏ</button>
 				<br><br>
 				<form role="form" name="parametres">
 					
@@ -74,46 +77,47 @@
 					<div class="form-group">
 					
 					
-					<label for="name">Город: </label>
+					<label for="name">Р“РѕСЂРѕРґ: </label>
 						<select class="form-control">
-							<option value="1" selected> Донецк</option>
-							<option value="2"> Мариуполь</option>
-							<option value="1"> Красноармейск</option>
+							<option value="1" selected> Р”РѕРЅРµС†Рє</option>
+							<option value="2"> РњР°СЂРёСѓРїРѕР»СЊ</option>
+							<option value="1"> РљСЂР°СЃРЅРѕР°СЂРјРµР№СЃРє</option>
 						</select>
 					</div>
 					<div class="form-group">
-						<label>Период оплаты: </label>
+						<label>РџРµСЂРёРѕРґ РѕРїР»Р°С‚С‹: </label>
 						<select class="form-control">
-							<option value="1">Январь</option>
-							<option value="2">Февраль</option>
-							<option value="3">Март</option>
-							<option value="4">Апрель</option>
-							<option value="5">Май</option>
-							<option value="6">Июнь</option>
-							<option value="7">Июль</option>
-							<option value="8">Август</option>
-							<option value="9">Сентябрь</option>
-							<option value="10">Октябрь</option>
-							<option value="11">Ноябрь</option>
-							<option value="12" selected>Декабрь</option>
+							<option value="1">РЇРЅРІР°СЂСЊ</option>
+							<option value="2">Р¤РµРІСЂР°Р»СЊ</option>
+							<option value="3">РњР°СЂС‚</option>
+							<option value="4">РђРїСЂРµР»СЊ</option>
+							<option value="5">РњР°Р№</option>
+							<option value="6">РСЋРЅСЊ</option>
+							<option value="7">РСЋР»СЊ</option>
+							<option value="8">РђРІРіСѓСЃС‚</option>
+							<option value="9">РЎРµРЅС‚СЏР±СЂСЊ</option>
+							<option value="10">РћРєС‚СЏР±СЂСЊ</option>
+							<option value="11">РќРѕСЏР±СЂСЊ</option>
+							<option value="12" selected>Р”РµРєР°Р±СЂСЊ</option>
 						</select>
 					</div>
-					<label>Оплачиваемые услуги: </label>
-					<div class="checkbox"><label><input type="checkbox" id="prov1" value="" data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> Квартплата</div>
-					<div class="checkbox"><label><input type="checkbox" id="prov2" value="" checked data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> Эл.энергия</div>
-					<div class="checkbox"><label><input type="checkbox" id="prov3" value="" checked data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> Прир. газ</div>
-					<div class="checkbox"><label><input type="checkbox" id="prov4" value="" checked data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()">Хол. вода</div>
-					<div class="checkbox"><label><input type="checkbox" id="prov5" value="" checked data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()">Стоки </div>
-					<div class="checkbox"><label><input type="checkbox" id="prov6" value="" data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> Отопление</div>
-					<div class="checkbox"><label><input type="checkbox" id="prov7" value="" data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> Гор. вода</div>
-					<div class="checkbox"><label><input type="checkbox" id="prov8" value="" checked data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> Вывоз ТБО</div>
-					<div class="checkbox"><label><input type="checkbox" id="prov9" value="" data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> УГСО</div>
-					<div class="checkbox"><label><input type="checkbox" id="prov10" value="" data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> Телефон</div>
-					<div class="checkbox"><label><input type="checkbox" id="prov11" value="" data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> Домофон</div>
-					
+					<label>РћРїР»Р°С‡РёРІР°РµРјС‹Рµ СѓСЃР»СѓРіРё: </label>
+					<div class="checkbox"><label><input type="checkbox" id="prov1" value="" data-on="РІРєР»" data-off="РІС‹РєР»" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> РљРІР°СЂС‚РїР»Р°С‚Р°</div>
+					<div class="checkbox"><label><input type="checkbox" id="prov2" value="" checked data-on="РІРєР»" data-off="РІС‹РєР»" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> Р­Р».СЌРЅРµСЂРіРёСЏ</div>
+					<div class="checkbox"><label><input type="checkbox" id="prov3" value="" checked data-on="РІРєР»" data-off="РІС‹РєР»" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> РџСЂРёСЂ. РіР°Р·</div>
+					<div class="checkbox"><label><input type="checkbox" id="prov4" value="" checked data-on="РІРєР»" data-off="РІС‹РєР»" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()">РҐРѕР». РІРѕРґР°</div>
+					<div class="checkbox"><label><input type="checkbox" id="prov5" value="" checked data-on="РІРєР»" data-off="РІС‹РєР»" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()">РЎС‚РѕРєРё </div>
+					<div class="checkbox"><label><input type="checkbox" id="prov6" value="" data-on="РІРєР»" data-off="РІС‹РєР»" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> РћС‚РѕРїР»РµРЅРёРµ</div>
+					<div class="checkbox"><label><input type="checkbox" id="prov7" value="" data-on="РІРєР»" data-off="РІС‹РєР»" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> Р“РѕСЂ. РІРѕРґР°</div>
+					<div class="checkbox"><label><input type="checkbox" id="prov8" value="" checked data-on="РІРєР»" data-off="РІС‹РєР»" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> Р’С‹РІРѕР· РўР‘Рћ</div>
+					<div class="checkbox"><label><input type="checkbox" id="prov9" value="" data-on="РІРєР»" data-off="РІС‹РєР»" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> РЈР“РЎРћ</div>
+					<div class="checkbox"><label><input type="checkbox" id="prov10" value="" data-on="РІРєР»" data-off="РІС‹РєР»" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> РўРµР»РµС„РѕРЅ</div>
+					<div class="checkbox"><label><input type="checkbox" id="prov11" value="" data-on="РІРєР»" data-off="РІС‹РєР»" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> Р”РѕРјРѕС„РѕРЅ</div>
+				
 					
 				</form>
 				
+				<p id="primechanie"></p>
 			
 			</div>
 			
@@ -121,21 +125,21 @@
 			<div class="col-xs-9">
 				
 				
-					<form class="form-inline" role="form">
-						<h2 id="test1">Единая расчетная книжка</h2>
-						<h3>ИЗВЕЩЕНИЕ</h3>
+					<form class="form-inline" role="form" name="formaRecord">
+						<h2 id="test1">Р•РґРёРЅР°СЏ СЂР°СЃС‡РµС‚РЅР°СЏ РєРЅРёР¶РєР°</h2>
+						<h3>РР—Р’Р•Р©Р•РќРР•</h3>
 						<div class="form-group">
-							<label class="control-label">Абонент</label>
-							<input class="form-control" id="rec1" type="text" placeholder="">
+							<label class="control-label">РђР±РѕРЅРµРЅС‚</label>
+							<input class="form-control" id="rec1" type="text" placeholder="" onClick="saveParametr()" >
 						</div>		
 						<div class="form-group">
-							<label class="control-label">Адрес</label>
-							<input class="form-control" id="rec2" type="text" value="">
+							<label class="control-label">РђРґСЂРµСЃ</label>
+							<input class="form-control" id="rec2" type="text" onClick="saveParametr()">
 								
 						</div>
 						<div class="form-group">
-							<label class="control-label">Код ЕРЦ</label>
-							<input class="form-control" id="rec3" type="text" value="">
+							<label class="control-label">РљРѕРґ Р•Р Р¦</label>
+							<input class="form-control" id="rec3" type="text" value="" onClick="saveParametr()">
 						</div>
 					</form>
 					
@@ -149,21 +153,21 @@
 										<th></th>
 										<th></th>
 										<th></th>
-										<th colspan="3">Показания счетчика</th>
+										<th colspan="3">РџРѕРєР°Р·Р°РЅРёСЏ СЃС‡РµС‚С‡РёРєР°</th>
 									</tr>
 									<tr>
-										<th style="width: 150px;">Вид оплаты</th>
-										<th style="width: 100px;">Сумма платежа</th>
-										<th style="width: 100px;">Период оплаты</th>
-										<th style="width: 90px;">Пеня</th>
-										<th style="width: 90px;">Кон.</th>
-										<th style="width: 90px;">Нач.</th>
-										<th>Разн.</th>
+										<th style="width: 150px;">Р’РёРґ РѕРїР»Р°С‚С‹</th>
+										<th style="width: 100px;">РЎСѓРјРјР° РїР»Р°С‚РµР¶Р°</th>
+										<th style="width: 100px;">РџРµСЂРёРѕРґ РѕРїР»Р°С‚С‹</th>
+										<th style="width: 90px;">РџРµРЅСЏ</th>
+										<th style="width: 90px;">РљРѕРЅ.</th>
+										<th style="width: 90px;">РќР°С‡.</th>
+										<th>Р Р°Р·РЅ.</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr id="rows1">
-										<td  onClick="messme()">Квартплата </td>
+										<td  onClick="messme()">РљРІР°СЂС‚РїР»Р°С‚Р° </td>
 										<td id="bFlat"></td>
 										<td>01.2014</td>
 										<td></td>
@@ -172,7 +176,7 @@
 										<td></td>
 									</tr>
 									<tr id="rows2">
-										<td onClick="messme()">Эл. энергия </td>
+										<td onClick="messme()">Р­Р». СЌРЅРµСЂРіРёСЏ </td>
 										<td id="bElectro"></td>
 										<td>01.2014</td>
 										<td></td>
@@ -180,7 +184,7 @@
 										<td><input class="form-control" id="Electro1" type="text" onClick="messme()"></td>
 										<td id="sElectro" onClick="messme()"></td>
 									</tr><tr id="rows3">
-										<td onClick="messme()">Газ</td>
+										<td onClick="messme()">Р“Р°Р·</td>
 										<td id="bGas"></td>
 										<td>01.2014</td>
 										<td></td>
@@ -188,7 +192,7 @@
 										<td><input class="form-control" id="Gas1" type="text" onClick="messme()"></td>
 										<td id="sGas" onClick="messme()"></td>
 									</tr><tr  id="rows4">
-										<td onClick="messme()">Вода</td>
+										<td onClick="messme()">Р’РѕРґР°</td>
 										<td id="bWater"></td>
 										<td>01.2014</td>
 										<td></td>
@@ -196,7 +200,7 @@
 										<td><input class="form-control" id="Water1" type="text" onClick="messme()"></td>
 										<td id="sWater" onClick="messme()"></td>
 									</tr><tr  id="rows5">
-										<td onClick="messme()">Стоки </td>
+										<td onClick="messme()">РЎС‚РѕРєРё </td>
 										<td id="bStoki"></td>
 										<td>01.2014</td>
 										<td></td>
@@ -204,7 +208,7 @@
 										<td></td>
 										<td></td>
 									</tr><tr  id="rows6">
-										<td onClick="messme()">Отопление </td>
+										<td onClick="messme()">РћС‚РѕРїР»РµРЅРёРµ </td>
 										<td id="bOtoplenie"></td>
 										<td>01.2014</td>
 										<td></td>
@@ -212,7 +216,7 @@
 										<td></td>
 										<td></td>
 									</tr><tr  id="rows7">
-										<td onClick="messme()">Горячая вода </td>
+										<td onClick="messme()">Р“РѕСЂСЏС‡Р°СЏ РІРѕРґР° </td>
 										<td id="bHwater"></td>
 										<td>01.2014</td>
 										<td></td>
@@ -220,7 +224,7 @@
 										<td><input class="form-control" id="Hwater1" type="text" onClick="messme()"></td>
 										<td  id="sHwater" onClick="messme()"></td>
 									</tr><tr  id="rows8">
-										<td onClick="messme()"> Вывоз ТБО </td>
+										<td onClick="messme()"> Р’С‹РІРѕР· РўР‘Рћ </td>
 										<td id="bTBO"></td>
 										<td></td>
 										<td></td>
@@ -228,7 +232,7 @@
 										<td></td>
 										<td></td>
 									</tr><tr  id="rows9">
-										<td onClick="messme()">Услуги УГСО </td>
+										<td onClick="messme()">РЈСЃР»СѓРіРё РЈР“РЎРћ </td>
 										<td id="bUGSO"></td>
 										<td></td>
 										<td></td>
@@ -236,7 +240,7 @@
 										<td></td>
 										<td></td>
 									</tr><tr  id="rows10">
-										<td onClick="messme()">Телефон</td>
+										<td onClick="messme()">РўРµР»РµС„РѕРЅ</td>
 										<td id="bTelephon"></td>
 										<td>01.2014</td>
 										<td></td>
@@ -244,7 +248,7 @@
 										<td></td>
 										<td></td>
 									</tr><tr  id="rows11">
-										<td onClick="messme()">Домофон</td>
+										<td onClick="messme()">Р”РѕРјРѕС„РѕРЅ</td>
 										<td id="bDomophon"></td>
 										<td></td>
 										<td></td>
@@ -252,7 +256,7 @@
 										<td></td>
 										<td></td>
 									</tr><tr>
-										<td onClick="messme()">Итого</td>
+										<td onClick="messme()">РС‚РѕРіРѕ</td>
 										<td id="bItogo">00-00</td>
 										<td></td>
 										<td></td>
@@ -264,7 +268,7 @@
 							</table>
 							
 						</div>
-						 <!-- <button class="btn btn-success pull-right" onClick="messme()"> Посчитать </button> -->
+						 <!-- <button class="btn btn-success pull-right" onClick="messme()"> РџРѕСЃС‡РёС‚Р°С‚СЊ </button> -->
 					</form>
 				
 			
