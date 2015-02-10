@@ -48,6 +48,24 @@ var reclname=document.forms.formaRecord.rec2.value;
 saveCookie('askuelname',reclname);
 var reccod=document.forms.formaRecord.rec3.value;
 saveCookie('askuecode',reccod);
+					var recElectro1=document.forms.formaSchet.Electro1.value;
+					saveCookie('askueElectro1',recElectro1);
+					var recElectro2=document.forms.formaSchet.Electro2.value;
+					saveCookie('askueElectro2',recElectro2);
+					var recGas1=document.forms.formaSchet.Gas1.value;
+					saveCookie('askueGas1',recGas1);
+					var recGas2=document.forms.formaSchet.Gas2.value;
+					saveCookie('askueGas2',recGas2);
+					var recWater1=document.forms.formaSchet.Water1.value;
+					saveCookie('askueWater1',recWater1);
+					var recWater2=document.forms.formaSchet.Water2.value;
+					saveCookie('askueWater2',recWater2);
+					var recHwater1=document.forms.formaSchet.Hwater1.value;
+					saveCookie('askueHwater1',recHwater1);
+					var recHwater2=document.forms.formaSchet.Hwater2.value;
+					saveCookie('askueHwater2',recHwater2);
+
+					
 //alert("wow = "+fname);
 //alert("");
 }
@@ -79,7 +97,22 @@ if (readCookie('askuelname')) {
 document.getElementById('rec2').value=readCookie('askuelname');} 
 if (readCookie('askuecode')) { 
 document.getElementById('rec3').value=readCookie('askuecode');} 
-
+				if (readCookie('askueElectro1')) { 
+				document.getElementById('Electro1').value=readCookie('askueElectro1');} 
+				if (readCookie('askueElectro2')) {
+				document.getElementById('Electro2').value=readCookie('askueElectro2');}
+				if (readCookie('askueGas1')) {
+				document.getElementById('Gas1').value=readCookie('askueGas1');}
+				if (readCookie('askueGas2')) {
+				document.getElementById('Gas2').value=readCookie('askueGas2');}
+				if (readCookie('askueWater1')) {
+				document.getElementById('Water1').value=readCookie('askueWater1');}
+				if (readCookie('askueWater2')) {
+				document.getElementById('Water2').value=readCookie('askueWater2');}
+				if (readCookie('askueHwater1')) {
+				document.getElementById('Hwater1').value=readCookie('askueHwater1');}
+				if (readCookie('askueHwater2')) {
+				document.getElementById('Hwater2').value=readCookie('askueHwater2');}
 //-----Конец блока автозаполнения колонок-----------------------------------------------------------------------------------------
 
 
@@ -175,6 +208,10 @@ var tarif9=150*3; // УГСО
 var tarif10=39.91*3; // телефон
 var tarif11=7.00*3; // домофон
 }
+// Заполнение формы сохраненными значениями
+//if (readCookie('askueElectro1')) { 
+//document.getElementById('Electro1').value=readCookie('askueElectro1');} 
+
 //Расчет платежей за каждую услугу
 //Квартплата
 var plata1=okrugl(tarif1,2); //квартплата
