@@ -1,5 +1,14 @@
-﻿var h=navigator.cookieEnabled;  // проверка поддержка cookie браузером
+﻿var cdata=new Date();
+var cmonth=cdata.getMonth(); 
+var cyear=cdata.getFullYear();
+var amonth=['01','02','03','04','05','06','07','08','09','10','11','12'];
+if (cmonth<1) cmonthkoef=11; else cmonthkoef=cmonth-1;
+var cmonthnorm=amonth[cmonthkoef];
+var cfulldate=cmonthnorm+'.'+cyear;
+var h=navigator.cookieEnabled;  // проверка поддержка cookie браузером
 //var tarif="min"; // установка минимального тарифа для расчета
+
+
 
 function saveCookie(cname,cvalue) {  //Сохранение кукисов
 document.cookie=""+cname+"="+cvalue+"; max-age="+(60*60*2);
@@ -72,13 +81,26 @@ saveCookie('askuecode',reccod);
 
 
 
-// Проверка сохранности массива коэффициентов сначала. Теперь тестовая проверка
+// Проверка сохранности массива коэффициентов сначала. Теперь тестовая проверка. Теперь обнуление кукисов - новый расчет
 function probaK() {
 //for (var i=1;i<12;i++){
 //alert(koef[i]);
-var allcookies=document.cookie;
-alert("full value="+allcookies);
 
+//var allcookies=document.cookie;
+//alert("full value="+allcookies);
+
+saveCookie('askuename','');
+saveCookie('askuelname','');
+saveCookie('askuecode','');
+saveCookie('askueElectro1','');
+saveCookie('askueElectro2','');
+saveCookie('askueGas1','');
+saveCookie('askueGas2','');
+saveCookie('askueWater1','');
+saveCookie('askueWater2','');
+saveCookie('askueHwater1','');
+saveCookie('askueHwater2','');
+location="index		.html";
 }
 
 function toStart() {   //функция запускающая начало вычислений
@@ -113,6 +135,9 @@ document.getElementById('rec3').value=readCookie('askuecode');}
 				document.getElementById('Hwater1').value=readCookie('askueHwater1');}
 				if (readCookie('askueHwater2')) {
 				document.getElementById('Hwater2').value=readCookie('askueHwater2');}
+//автозаполнение даты
+$('.cdate').text(cfulldate);
+
 //-----Конец блока автозаполнения колонок-----------------------------------------------------------------------------------------
 
 

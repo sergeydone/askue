@@ -67,7 +67,7 @@
 		
 		<div class="row">
 			<div class="col-xs-3">
-				<button class="btn btn-success" onClick="probaK();">Выполнить<br>расчет <br> коммунальных <br>платежей <br>для <br>квартиры <br> или <br>домовладения</button>
+				<button class="btn btn-success" onClick="probaK();">Новый<br>расчет <br> коммунальных <br>платежей <br>для <br>квартиры <br> или <br>домовладения</button>
 				<br><br>
 				<form role="form" name="parametres">
 					
@@ -131,16 +131,16 @@
 						<h3>ИЗВЕЩЕНИЕ</h3>
 						<div class="form-group">
 							<label class="control-label">Абонент</label>
-							<input class="form-control" id="rec1" type="text" placeholder="" onClick="saveParametr()" >
+							<input class="form-control" id="rec1" type="text" placeholder="" onChange="saveParametr()" >
 						</div>		
 						<div class="form-group">
 							<label class="control-label">Адрес</label>
-							<input class="form-control" id="rec2" type="text" onClick="saveParametr()">
+							<input class="form-control" id="rec2" type="text" onChange="saveParametr()">
 								
 						</div>
 						<div class="form-group">
 							<label class="control-label">Код ЕРЦ</label>
-							<input class="form-control" id="rec3" type="text" value="" onClick="saveParametr()">
+							<input class="form-control" id="rec3" type="text" value="" onChange="saveParametr()">
 						</div>
 					</form>
 					
@@ -170,7 +170,7 @@
 									<tr id="rows1">
 										<td  onClick="messme()">Квартплата </td>
 										<td id="bFlat"></td>
-										<td>01.2014</td>
+										<td class="cdate">01.2014</td>
 										<td></td>
 										<td></td>
 										<td></td>
@@ -179,31 +179,31 @@
 									<tr id="rows2">
 										<td onClick="messme()">Эл. энергия </td>
 										<td id="bElectro"></td>
-										<td>01.2014</td>
+										<td class="cdate">01.2014</td>
 										<td></td>
-										<td><input class="form-control" id="Electro2" type="text" onClick="messme()"></td>
-										<td><input class="form-control" id="Electro1" type="text" onClick="messme()"></td>
+										<td><input class="form-control" id="Electro2" type="text" onChange="messme(), saveParametr()"></td>
+										<td><input class="form-control" id="Electro1" type="text" onChange="messme(), saveParametr()"></td>
 										<td id="sElectro" onClick="messme()"></td>
 									</tr><tr id="rows3">
 										<td onClick="messme()">Газ</td>
 										<td id="bGas"></td>
-										<td>01.2014</td>
+										<td class="cdate">01.2014</td>
 										<td></td>
-										<td><input class="form-control" id="Gas2" type="text" onClick="messme()"></td>
-										<td><input class="form-control" id="Gas1" type="text" onClick="messme()"></td>
+										<td><input class="form-control" id="Gas2" type="text" onChange="messme(), saveParametr()"></td>
+										<td><input class="form-control" id="Gas1" type="text" onChange="messme(), saveParametr()"></td>
 										<td id="sGas" onClick="messme()"></td>
 									</tr><tr  id="rows4">
 										<td onClick="messme()">Вода</td>
 										<td id="bWater"></td>
-										<td>01.2014</td>
+										<td  class="cdate">01.2014</td>
 										<td></td>
-										<td><input class="form-control" id="Water2" type="text" onClick="messme()"></td>
-										<td><input class="form-control" id="Water1" type="text" onClick="messme()"></td>
+										<td><input class="form-control" id="Water2" type="text" onChange="messme(), saveParametr()"></td>
+										<td><input class="form-control" id="Water1" type="text" onChange="messme(), saveParametr()"></td>
 										<td id="sWater" onClick="messme()"></td>
 									</tr><tr  id="rows5">
 										<td onClick="messme()">Стоки </td>
 										<td id="bStoki"></td>
-										<td>01.2014</td>
+										<td  class="cdate">01.2014</td>
 										<td></td>
 										<td></td>
 										<td></td>
@@ -211,7 +211,7 @@
 									</tr><tr  id="rows6">
 										<td onClick="messme()">Отопление </td>
 										<td id="bOtoplenie"></td>
-										<td>01.2014</td>
+										<td  class="cdate">01.2014</td>
 										<td></td>
 										<td></td>
 										<td></td>
@@ -219,15 +219,15 @@
 									</tr><tr  id="rows7">
 										<td onClick="messme()">Горячая вода </td>
 										<td id="bHwater"></td>
-										<td>01.2014</td>
+										<td  class="cdate">01.2014</td>
 										<td></td>
-										<td><input class="form-control" id="Hwater2" type="text" onClick="messme()"></td>
-										<td><input class="form-control" id="Hwater1" type="text" onClick="messme()"></td>
+										<td><input class="form-control" id="Hwater2" type="text" onChange="messme(), saveParametr()"></td>
+										<td><input class="form-control" id="Hwater1" type="text" onChange="messme(), saveParametr()"></td>
 										<td  id="sHwater" onClick="messme()"></td>
 									</tr><tr  id="rows8">
 										<td onClick="messme()"> Вывоз ТБО </td>
 										<td id="bTBO"></td>
-										<td></td>
+										<td  class="cdate"></td>
 										<td></td>
 										<td></td>
 										<td></td>
@@ -235,7 +235,7 @@
 									</tr><tr  id="rows9">
 										<td onClick="messme()">Услуги УГСО </td>
 										<td id="bUGSO"></td>
-										<td></td>
+										<td  class="cdate"></td>
 										<td></td>
 										<td></td>
 										<td></td>
@@ -243,7 +243,7 @@
 									</tr><tr  id="rows10">
 										<td onClick="messme()">Телефон</td>
 										<td id="bTelephon"></td>
-										<td>01.2014</td>
+										<td  class="cdate">01.2014</td>
 										<td></td>
 										<td></td>
 										<td></td>
@@ -251,7 +251,7 @@
 									</tr><tr  id="rows11">
 										<td onClick="messme()">Домофон</td>
 										<td id="bDomophon"></td>
-										<td></td>
+										<td  class="cdate"></td>
 										<td></td>
 										<td></td>
 										<td></td>
@@ -259,7 +259,7 @@
 									</tr><tr>
 										<td onClick="messme()">Итого</td>
 										<td id="bItogo">00-00</td>
-										<td></td>
+										<td  class="cdate"></td>
 										<td></td>
 										<td></td>
 										<td></td>
