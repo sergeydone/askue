@@ -28,10 +28,15 @@ document.cookie=""+cname+"="+cvalue+"; max-age="+(60*60*2);
 function hideSwitchers() { // функция для скрытия переключателей сайдбара и отображения формы ввода тарифов
 $('#hidehide').hide();
 $('#showshow').show();
-// Переключаем город на Донецк
+// Переключаем город на Донецк - ВРЕМЕННО!!!
 // $('#provcity').hide();
-// $('#provcity').text='Донецк';
-
+document.parametres.provcity.options.length=1; // Удаляем список городов
+//document.parametres.provcity.options[1].selected="true";
+//document.parametres.provcity.options[0].value=document.parametres.provcity.options[2].value;
+//document.parametres.provcity.options[0].text=document.parametres.provcity.options[2].text;
+// var donetskCity= new Option("Донецк","Донецк",true,true);
+// var town=document.parametres.provcity;
+// town.options[town.options.length]=donetskCity;
 // Дополняем выводом в поля input забитых в программу или записаных в кукисы тарифов
  if (readCookie('askueTarifKvartira')) { var tarif1=readCookie('askueTarifKvartira'); allTarif[0][0]=tarif1;}
  else var tarif1=allTarif[0][0]; 
@@ -82,7 +87,12 @@ $('#showshow').show();
 function showSwitchers() { // функция для отображения переключателей сайдбара
 $('#showshow').hide();
 $('#hidehide').show();
-$('#provcity').show();
+document.parametres.provcity.options.length=3;
+var mariupolCity = new Option("Мариуполь","Мариуполь",false,false);
+var krasnoarmeyskCity= new Option("Красноармейск","Красноармейск",false,false);
+var town=document.parametres.provcity;
+town.options[1]=mariupolCity;
+town.options[2]=krasnoarmeyskCity;
 }
 
 
@@ -242,7 +252,7 @@ showSwitchers();
 }
 
 
-//Функция скрытия и отображения нужных для расчета строк квитанции
+//Функция скры тия и отображения нужных для расчета строк квитанции
 function proba() {
 //-----Блок автозаполнения колонок---------------------------------------------------------------------------------------
 if (readCookie('askuename')) { 
