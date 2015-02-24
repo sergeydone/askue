@@ -1,4 +1,14 @@
-﻿var cdata=new Date();
+﻿//document.parametres.provcity.onclick=function(){alert("fjklejkf");}
+var donetskTarif=[1.92*30.2, 0.3084, 1.089, 3.372, 2.136, 3.48*30.2, 17.58, 14.43*3, 150, 39.91, 7];// квартплата, электро, газ, вода, стоки, отопление, горячая вода, вывоз ТБО з чел., УГСО, телефон, домофон
+var mariupolTarif=[2.07*30*2, 0.3084, 1.089, 3.372*2, 2.136*2, 3.48*30*2, 17.58*2, 14.43*3*2, 150*2, 39.91*2, 7*2];// квартплата, электро, газ, вода, стоки, отопление, горячая вода, вывоз ТБО з чел., УГСО, телефон, домофон
+var krasnoarmeyskTarif=[2.07*100*3, 0.3084, 1.089, 3.372*3, 2.136*3, 3.48*100*3, 17.58*3, 14.43*3*3, 150*3, 39.91*3, 7*3];// квартплата, электро, газ, вода, стоки, отопление, горячая вода, вывоз ТБО з чел., УГСО, телефон, домофон
+var allTarif=[donetskTarif,mariupolTarif,krasnoarmeyskTarif];
+
+
+
+
+// --------------------------------------------------------------
+var cdata=new Date();
 var cmonth=cdata.getMonth(); 
 var cyear=cdata.getFullYear();
 var amonth=['01','02','03','04','05','06','07','08','09','10','11','12'];
@@ -12,8 +22,68 @@ var h=navigator.cookieEnabled;  // проверка поддержка cookie б
 
 function saveCookie(cname,cvalue) {  //Сохранение кукисов
 document.cookie=""+cname+"="+cvalue+"; max-age="+(60*60*2);
+// alert("save");
 }
 
+function hideSwitchers() { // функция для скрытия переключателей сайдбара и отображения формы ввода тарифов
+$('#hidehide').hide();
+$('#showshow').show();
+// Переключаем город на Донецк
+// $('#provcity').hide();
+// $('#provcity').text='Донецк';
+
+// Дополняем выводом в поля input забитых в программу или записаных в кукисы тарифов
+ if (readCookie('askueTarifKvartira')) { var tarif1=readCookie('askueTarifKvartira'); allTarif[0][0]=tarif1;}
+ else var tarif1=allTarif[0][0]; 
+ document.getElementById('mytarif1').value=okrugl(tarif1,2);
+
+ if (readCookie('askueTarifElectro')) { var tarif2=readCookie('askueTarifElectro');  allTarif[0][1]=tarif2;}
+ else var tarif2=allTarif[0][1]; 
+ document.getElementById('mytarif2').value=okrugl(tarif2,2);
+
+ if (readCookie('askueTarifGas')) { var tarif3=readCookie('askueTarifGas');  allTarif[0][2]=tarif3;}
+ else var tarif3=allTarif[0][2]; 
+ document.getElementById('mytarif3').value=okrugl(tarif3,2);
+
+ if (readCookie('askueTarifHVoda')) { var tarif4=readCookie('askueTarifHVoda');  allTarif[0][3]=tarif4;}
+ else var tarif4=allTarif[0][3]; 
+ document.getElementById('mytarif4').value=okrugl(tarif4,2);
+
+ if (readCookie('askueTarifStoki')) { var tarif5=readCookie('askueTarifStoki');  allTarif[0][4]=tarif5;}
+ else var tarif5=allTarif[0][4]; 
+ document.getElementById('mytarif5').value=okrugl(tarif5,2);
+
+ if (readCookie('askueTarifOtoplenie')) { var tarif6=readCookie('askueTarifOtoplenie');  allTarif[0][5]=tarif6;}
+ else var tarif6=allTarif[0][5]; 
+ document.getElementById('mytarif6').value=okrugl(tarif6,2);
+
+ if (readCookie('askueTarifGVoda')) { var tarif7=readCookie('askueTarifGVoda');  allTarif[0][6]=tarif7;}
+ else var tarif7=allTarif[0][6]; 
+ document.getElementById('mytarif7').value=okrugl(tarif7,2);
+
+ if (readCookie('askueTarifTBO')) { var tarif8=readCookie('askueTarifTBO');  allTarif[0][7]=tarif8;}
+ else var tarif8=allTarif[0][7]; 
+ document.getElementById('mytarif8').value=okrugl(tarif8,2);
+
+ if (readCookie('askueTarifUGSO')) { var tarif9=readCookie('askueTarifUGSO');  allTarif[0][8]=tarif9;}
+ else var tarif9=allTarif[0][8]; 
+ document.getElementById('mytarif9').value=okrugl(tarif9,2);
+
+ if (readCookie('askueTarifTelefon')) { var tarif10=readCookie('askueTarifTelefon');  allTarif[0][9]=tarif10;}
+ else var tarif10=allTarif[0][9]; 
+ document.getElementById('mytarif10').value=okrugl(tarif10,2);
+
+ if (readCookie('askueTarifDomofon')) { var tarif11=readCookie('askueTarifDomofon');  allTarif[0][10]=tarif11;}
+ else var tarif11=allTarif[0][10]; 
+ document.getElementById('mytarif11').value=okrugl(tarif11,2);
+// 
+}
+
+function showSwitchers() { // функция для отображения переключателей сайдбара
+$('#showshow').hide();
+$('#hidehide').show();
+$('#provcity').show();
+}
 
 
 function readCookie(cookiename) {   //функция чтения значения из куки
@@ -21,6 +91,7 @@ function readCookie(cookiename) {   //функция чтения значени
 var allcookies=document.cookie;
 //alert("full value="+allcookies);
 var temp=allcookies.indexOf(cookiename);
+
 if (temp!=-1) { //alert("start to work");
 var beginingvalue=temp+0; // начало значения
 var endingvalue=allcookies.indexOf(";",beginingvalue); //окончание значения
@@ -74,21 +145,70 @@ saveCookie('askuecode',reccod);
 					var recHwater2=document.forms.formaSchet.Hwater2.value;
 					saveCookie('askueHwater2',recHwater2);
 
-					
 //alert("wow = "+fname);
 //alert("");
 }
 
+function saveTarif() {   // функция сохраняет в кукисы собственные тарифы пользователя
+var recTarifKvartira=document.forms.myTarifs.mytarif1.value; 
+saveCookie('askueTarifKvartira',recTarifKvartira);
+var recTarifElectro=document.forms.myTarifs.mytarif2.value;
+saveCookie('askueTarifElectro',recTarifElectro);
+var recTarifGas=document.forms.myTarifs.mytarif3.value;
+saveCookie('askueTarifGas',recTarifGas);
+var recTarifHVoda=document.forms.myTarifs.mytarif4.value;
+saveCookie('askueTarifHVoda',recTarifHVoda);
+var recTarifStoki=document.forms.myTarifs.mytarif5.value;
+saveCookie('askueTarifStoki',recTarifStoki);
+var recTarifOtoplenie=document.forms.myTarifs.mytarif6.value;
+saveCookie('askueTarifOtoplenie',recTarifOtoplenie);
+var recTarifGVoda=document.forms.myTarifs.mytarif7.value;
+saveCookie('askueTarifGVoda',recTarifGVoda);
+var recTarifTBO=document.forms.myTarifs.mytarif8.value;
+saveCookie('askueTarifTBO',recTarifTBO);
+var recTarifUGSO=document.forms.myTarifs.mytarif9.value;
+saveCookie('askueTarifUGSO',recTarifUGSO);
+var recTarifTelefon=document.forms.myTarifs.mytarif10.value;
+saveCookie('askueTarifTelefon',recTarifTelefon);					
+var recTarifDomofon=document.forms.myTarifs.mytarif11.value;
+saveCookie('askueTarifDomofon',recTarifDomofon);
+}
 
+function saveOldTarif() {   // функция сохраняет в кукисы предыдущие тарифы пользователя
+// alert("start to save old tarif");
+// alert("1="+allTarif[0][0]);
+var recTarifKvartira=allTarif[0][0]; 
+// alert("2="+recTarifKvartira);
+saveCookie('askueTarifKvartira',recTarifKvartira);
+var recTarifElectro=allTarif[0][1];
+saveCookie('askueTarifElectro',recTarifElectro);
+var recTarifGas=allTarif[0][2];
+saveCookie('askueTarifGas',recTarifGas);
+var recTarifHVoda=allTarif[0][3];
+saveCookie('askueTarifHVoda',recTarifHVoda);
+var recTarifStoki=allTarif[0][4];
+saveCookie('askueTarifStoki',recTarifStoki);
+var recTarifOtoplenie=allTarif[0][5];
+saveCookie('askueTarifOtoplenie',recTarifOtoplenie);
+var recTarifGVoda=allTarif[0][6];
+saveCookie('askueTarifGVoda',recTarifGVoda);
+var recTarifTBO=allTarif[0][7];
+saveCookie('askueTarifTBO',recTarifTBO);
+var recTarifUGSO=allTarif[0][8];
+saveCookie('askueTarifUGSO',recTarifUGSO);
+var recTarifTelefon=allTarif[0][9];
+saveCookie('askueTarifTelefon',recTarifTelefon);					
+var recTarifDomofon=allTarif[0][10];
+saveCookie('askueTarifDomofon',recTarifDomofon);
+// alert("finisht to save old tarif")
+}
 
 // Проверка сохранности массива коэффициентов сначала. Теперь тестовая проверка. Теперь обнуление кукисов - новый расчет
 function probaK() {
 //for (var i=1;i<12;i++){
 //alert(koef[i]);
-
 //var allcookies=document.cookie;
 //alert("full value="+allcookies);
-
 saveCookie('askuename','');
 saveCookie('askuelname','');
 saveCookie('askuecode','');
@@ -100,11 +220,23 @@ saveCookie('askueWater1','');
 saveCookie('askueWater2','');
 saveCookie('askueHwater1','');
 saveCookie('askueHwater2','');
-location="index		.html";
+saveCookie('askueTarifKvartira','');
+saveCookie('askueTarifElectro','');
+saveCookie('askueTarifGas','');
+saveCookie('askueTarifHVoda','');
+saveCookie('askueTarifStoki','');
+saveCookie('askueTarifOtoplenie','');
+saveCookie('askueTarifGVoda','');
+saveCookie('askueTarifTBO','');
+saveCookie('askueTarifUGSO','');
+saveCookie('askueTarifTelefon','');
+saveCookie('askueTarifDomofon','');
+location="index.html";
 }
 
 function toStart() {   //функция запускающая начало вычислений
 proba();
+showSwitchers();
 //saveCookie(); //('askuename','Ivan');
 //readCookie('askuename');
 }
@@ -180,6 +312,8 @@ if ((document.parametres.prov8.checked)) {$('#rows8').show(); koef[8]=1;}
 if ((document.parametres.prov9.checked)) {$('#rows9').show(); koef[9]=1;}
 if ((document.parametres.prov10.checked)) {$('#rows10').show(); koef[10]=1;}
 if ((document.parametres.prov11.checked)) {$('#rows11').show(); koef[11]=1;}
+//if ((document.parametres.prov12.checked)) {$('#hidehide').hide()}; 
+//if (!(document.parametres.prov12.checked)) {$('#hidehide').show()}; 
 var tarif="max";
 koef.tarif=tarif;
 var city=document.parametres.provcity.value;
@@ -191,19 +325,40 @@ return koef;
 //Функция подсчета стоимости коммунальных услуг 
 function messme() {
 var city=koef.city;
-// Тарифы Донецка - константы
+// Тарифы Донецка - константы или кукисы
 if (city=="Донецк") {
-var tarif1=2.07*100; // квартплата 100m2
-var tarif2=0.3084; // электро
-var tarif3=1.089; // газ
-var tarif4=3.372; // вода
-var tarif5=2.136; // стоки
-var tarif6=3.48*100; // отопление 100m2
-var tarif7=17.58; // горячая вода
-var tarif8=14.43*3; // вывоз тбо за 3 человек
-var tarif9=150; // УГСО
-var tarif10=39.91; // телефон
-var tarif11=7.00; // домофон
+				if (readCookie('askueTarifKvartira')) { var tarif1=readCookie('askueTarifKvartira');}
+				else var tarif1=allTarif[0][0]; // квартплата 100m2
+				
+				if (readCookie('askueTarifElectro')) { var tarif2=readCookie('askueTarifElectro');}
+				else var tarif2=allTarif[0][1]; // электро
+
+				if (readCookie('askueTarifGas')) { var tarif3=readCookie('askueTarifGas');}
+				else var tarif3=allTarif[0][2]; // газ
+
+				if (readCookie('askueTarifHVoda')) { var tarif4=readCookie('askueTarifHVoda');}
+				else var tarif4=allTarif[0][3]; // вода
+
+				if (readCookie('askueTarifStoki')) { var tarif5=readCookie('askueTarifStoki');}
+				else var tarif5=allTarif[0][4]; // стоки
+
+				if (readCookie('askueTarifOtoplenie')) { var tarif6=readCookie('askueTarifOtoplenie');}
+				else var tarif6=allTarif[0][5]; // отопление 100m2
+
+				if (readCookie('askueTarifGVoda')) { var tarif7=readCookie('askueTarifGVoda');}
+				else var tarif7=allTarif[0][6]; // горячая вода
+
+				if (readCookie('askueTarifTBO')) { var tarif8=readCookie('askueTarifTBO');}
+				else var tarif8=allTarif[0][7]; // вывоз тбо за 3 человек
+
+				if (readCookie('askueTarifUGSO')) { var tarif9=readCookie('askueTarifUGSO');}
+				else var tarif9=allTarif[0][8]; // УГСО
+
+				if (readCookie('askueTarifTelefon')) { var tarif10=readCookie('askueTarifTelefon');}
+				else var tarif10=allTarif[0][9]; // телефон
+
+				if (readCookie('askueTarifDomofon')) { var tarif11=readCookie('askueTarifDomofon');}
+				else var tarif11=allTarif[0][10]; // домофон
 }
 // Тарифы Мариуполя - константы
 if (city=="Мариуполь") {

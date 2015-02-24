@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!-- Коммунальные платежи домовладения или квартиры -->
 <html>
 <head>
 <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8">-->
-<meta charset="U-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="styles/bootstrap.min.css">
 <link rel="stylesheet" href="styles/bootstrap-toggle.min.css">
@@ -14,7 +14,7 @@
 <script src="scripts/myscript.js"></script>
 <meta name="description" content="Образец шаблона сайта bootstrap">
 <meta name="keywords" content="bootstrap, шаблон сайта">
-<title> Расчет стоимости коммунальных платежей </title>
+<title>  Sergeydone: Расчет стоимости коммунальных платежей </title>
 </head>
 <body onLoad="toStart()">
 	<div class="container">
@@ -24,7 +24,7 @@
 				<ul class="nav nav-pills pull-left freespace">
 					<li><a href="index.html">Главная</a></li>
 					<li><a class="dropdown-toggle" id="dropdownmenu1" data-toggle="dropdown" href="index.html"> Бесплатные услуги </a>
-						<ul class="dropdown-menu " role="menu" aria-labelledby="dropdownmenu1">
+						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownmenu1">
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Расчет коммунальных платежей для частных лиц</a></li>
 							
 						</ul>
@@ -38,8 +38,9 @@
 					</li>-->
 					<li><a class="dropdown-toggle" id="dropdownmenu3" data-toggle="dropdown" href="#">Аутсорсинг</a>
 						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownmenu3">
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">Разработка web-приложений (front-end)</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">Администрирование информационных систем</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">Параметрицация многофункциональных приборов учета</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">Программированиея многофункциональных приборов учета</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">Расчет потребления электрической энергии пром. предприятия</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">Расчет потерь электрической энергии в двухобомоточном трансформаторе</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="contact.html">Расчет потерь электрической энергии в трехобмоточном автотрансформаторе</a></li>
@@ -67,7 +68,7 @@
 		
 		<div class="row">
 			<div class="col-xs-3">
-				<button class="btn btn-success" onClick="probaK();">Новый<br>расчет <br> коммунальных <br>платежей <br>для <br>квартиры <br> или <br>домовладения</button>
+				<button name="pressMe" class="btn btn-success buttonArea" onClick="probaK();"> Новый расчет <br> коммунальных <br> платежей <br>для квартиры  <br>или домовладения<br>  </button>
 				<br><br>
 				<form role="form" name="parametres">
 					
@@ -78,8 +79,8 @@
 					
 					
 					<label for="name">Город: </label>
-						<select id="provcity" class="form-control" onChange="proba(), messme()">
-							<option value="Донецк"> Донецк</option>
+						<select id="provcity" class="form-control listArea" onChange="proba(), messme()">
+							<option value="Донецк" selected> Донецк</option>
 							<option value="Мариуполь"> Мариуполь</option>
 							<option value="Красноармейск"> Красноармейск</option>
 						</select>
@@ -102,24 +103,134 @@
 						</select>
 					</div>
 					-->
-					<label>Оплачиваемые услуги: </label>
-					<div class="checkbox"><label><input type="checkbox" id="prov1" value="" data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> Квартплата</div>
-					<div class="checkbox"><label><input type="checkbox" id="prov2" value="" checked data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> Эл.энергия</div>
-					<div class="checkbox"><label><input type="checkbox" id="prov3" value="" checked data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> Прир. газ</div>
-					<div class="checkbox"><label><input type="checkbox" id="prov4" value="" checked data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()">Хол. вода</div>
-					<div class="checkbox"><label><input type="checkbox" id="prov5" value="" checked data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()">Стоки </div>
-					<div class="checkbox"><label><input type="checkbox" id="prov6" value="" data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> Отопление</div>
-					<div class="checkbox"><label><input type="checkbox" id="prov7" value="" data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> Гор. вода</div>
-					<div class="checkbox"><label><input type="checkbox" id="prov8" value="" checked data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> Вывоз ТБО</div>
-					<div class="checkbox"><label><input type="checkbox" id="prov9" value="" data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> УГСО</div>
-					<div class="checkbox"><label><input type="checkbox" id="prov10" value="" data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> Телефон</div>
-					<div class="checkbox"><label><input type="checkbox" id="prov11" value="" data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> Домофон</div>
+					<div class="form-group" id="hidehide">
+						<label>Оплачиваемые услуги: </label>
+						<div class="checkbox">
+								<label>
+									<input type="checkbox" id="prov1" value="" data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> 
+									Квартплата
+						</div>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" id="prov2" value="" checked data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> 
+								Эл.энергия
+						</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" id="prov3" value="" checked data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> 
+							Прир. газ
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" id="prov4" value="" checked data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()">
+							Хол. вода
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" id="prov5" value="" checked data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()">
+							Стоки 
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" id="prov6" value="" data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> 
+							Отопление
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" id="prov7" value="" data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> 
+							Гор. вода
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" id="prov8" value="" checked data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> 
+							Вывоз ТБО
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" id="prov9" value="" data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> 
+							УГСО
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" id="prov10" value="" data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> 
+							Телефон
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" id="prov11" value="" data-on="вкл" data-off="выкл" data-onstyle="success"  data-toggle="toggle" onChange="proba(), messme()"> 
+							Домофон
+					</div>
+					<input type="button" name="pressToShowT" class="btn btn-warning buttonArea" onClick="hideSwitchers()" value="Внести тарифы">	
+					</div>
+					<!--<div class="form-group">
+						<div class="checkbox"><label><input type="checkbox" id="prov12" value="" data-on="вкл" data-off="выкл" data-onstyle="warning"  data-toggle="toggle" onChange="proba(), messme()"> Новый Тариф</div>
+					</div>-->
 				
-					
 				</form>
 				
+				
+				
+				
+				
+				
+				<!-- тут попытаемся реализовать внесение собственных тарифов-->
+				<form role="form" name="myTarifs" class="bs-example bs-example-form">
+					
+				<div id="showshow">
+					<label> Тарифы для расчета коммунальных платежей:</label>
+					<br>
+					<div class="input-group fullTarifArea">
+						<input class="form-control inputArea" type="text" id="mytarif1" value="" onChange="saveTarif(), proba(), messme()"> <span class="input-group-addon tarifArea" onclick="saveTarif(), proba(), messme()">Квартплата</span>
+					</div>
+					<br>
+					<div class="input-group fullTarifArea">
+						<input class="form-control inputArea" type="text" id="mytarif2" value="" onChange="saveTarif(), proba(), messme()"><span class="input-group-addon tarifArea" onclick="saveTarif(), proba(), messme()">Эл.энергия</span> 
+					</div>
+					<br>
+					<div class="input-group fullTarifArea">
+						<input class="form-control inputArea" type="text" id="mytarif3" value="" onChange="saveTarif(), proba(), messme()"> <span class="input-group-addon tarifArea" onclick="saveTarif(), proba(), messme()">Прир. газ</span>
+					</div>
+					<br>
+					<div class="input-group fullTarifArea">
+						<input class="form-control inputArea" type="text" id="mytarif4" value="" onChange="saveTarif(), proba(), messme()"><span class="input-group-addon tarifArea" onclick="saveTarif(), proba(), messme()">Хол. вода</span>
+					</div>
+					<br>
+					<div class="input-group fullTarifArea">
+						<input class="form-control inputArea" type="text" id="mytarif5" value="" onChange="saveTarif(), proba(), messme()"> <span class="input-group-addon tarifArea" onclick="saveTarif(), proba(), messme()">Стоки</span>
+					</div>
+					<br>
+					<div class="input-group fullTarifArea">
+						<input class="form-control inputArea" type="text" id="mytarif6" value="" onChange="saveTarif(), proba(), messme()"> <span class="input-group-addon tarifArea" onclick="saveTarif(), proba(), messme()">Отопление</span>
+					</div>
+					<br>
+					<div class="input-group fullTarifArea">
+						<input class="form-control inputArea" type="text" id="mytarif7" value="" onChange="saveTarif(), proba(), messme()"> <span class="input-group-addon tarifArea" onclick="saveTarif(), proba(), messme()">Гор. вода</span>
+					</div>
+					<br>
+					<div class="input-group fullTarifArea">
+						<input class="form-control inputArea" type="text" id="mytarif8" value="" onChange="saveTarif(), proba(), messme()"> <span class="input-group-addon tarifArea" onclick="saveTarif(), proba(), messme()">Вывоз ТБО</span>
+					</div>
+					<br>
+					<div class="input-group fullTarifArea">
+						<input class="form-control inputArea" type="text" id="mytarif9" value="" onChange="saveTarif(), proba(), messme()"> <span class="input-group-addon tarifArea" onclick="saveTarif(), proba(), messme()">УГСО</span>
+					</div>
+					<br>
+					<div class="input-group fullTarifArea">
+						<input class="form-control inputArea" type="text" id="mytarif10" value=""onChange="saveTarif(), proba(), messme()"> <span class="input-group-addon tarifArea" onclick="saveTarif(), proba(), messme()">Телефон</span>
+					</div>
+					<br>
+					<div class="input-group fullTarifArea">
+						<input class="form-control inputArea" type="text" id="mytarif11" value="" onChange="saveTarif(), proba(), messme()"> <span class="input-group-addon tarifArea" onclick="saveTarif(), proba(), messme()">Домофон</span>
+					</div>
+					<br>
+					<input type="button" name="pressToSaveT" class="btn btn-warning buttonArea" onClick="saveTarif(), showSwitchers(), proba(), messme()" value="Сохранить">	
+					<br><br>
+					<input type="button" name="pressToHideT" class="btn btn-success buttonArea" onClick="saveOldTarif(), showSwitchers(), proba(), messme()" value="Не сохранять">	
+				</div>	
+				</form>
+				<!-- завершения модуля внесения тарифов-->
+				<p><br></p>
 				<p id="primechanie"></p>
-			
 			</div>
 			
 			
@@ -131,16 +242,16 @@
 						<h3>ИЗВЕЩЕНИЕ</h3>
 						<div class="form-group">
 							<label class="control-label">Абонент</label>
-							<input class="form-control" id="rec1" type="text" placeholder="" onChange="saveParametr()" >
+							<input class="form-control inputArea" id="rec1" type="text" placeholder="" onChange="saveParametr()" >
 						</div>		
 						<div class="form-group">
 							<label class="control-label">Адрес</label>
-							<input class="form-control" id="rec2" type="text" onChange="saveParametr()">
+							<input class="form-control inputArea" id="rec2" type="text" onChange="saveParametr()">
 								
 						</div>
 						<div class="form-group">
 							<label class="control-label">Код ЕРЦ</label>
-							<input class="form-control" id="rec3" type="text" value="" onChange="saveParametr()">
+							<input class="form-control inputArea" id="rec3" type="text" value="" onChange="saveParametr()">
 						</div>
 					</form>
 					
@@ -181,24 +292,24 @@
 										<td id="bElectro"></td>
 										<td class="cdate">01.2014</td>
 										<td></td>
-										<td><input class="form-control" id="Electro2" type="text" onChange="messme(), saveParametr()"></td>
-										<td><input class="form-control" id="Electro1" type="text" onChange="messme(), saveParametr()"></td>
+										<td><input class="form-control inputArea" id="Electro2" type="text" onChange="messme(), saveParametr()"></td>
+										<td><input class="form-control inputArea" id="Electro1" type="text" onChange="messme(), saveParametr()"></td>
 										<td id="sElectro" onClick="messme()"></td>
 									</tr><tr id="rows3">
 										<td onClick="messme()">Газ</td>
 										<td id="bGas"></td>
 										<td class="cdate">01.2014</td>
 										<td></td>
-										<td><input class="form-control" id="Gas2" type="text" onChange="messme(), saveParametr()"></td>
-										<td><input class="form-control" id="Gas1" type="text" onChange="messme(), saveParametr()"></td>
+										<td><input class="form-control inputArea" id="Gas2" type="text" onChange="messme(), saveParametr()"></td>
+										<td><input class="form-control inputArea" id="Gas1" type="text" onChange="messme(), saveParametr()"></td>
 										<td id="sGas" onClick="messme()"></td>
 									</tr><tr  id="rows4">
 										<td onClick="messme()">Вода</td>
 										<td id="bWater"></td>
 										<td  class="cdate">01.2014</td>
 										<td></td>
-										<td><input class="form-control" id="Water2" type="text" onChange="messme(), saveParametr()"></td>
-										<td><input class="form-control" id="Water1" type="text" onChange="messme(), saveParametr()"></td>
+										<td><input class="form-control inputArea" id="Water2" type="text" onChange="messme(), saveParametr()"></td>
+										<td><input class="form-control inputArea" id="Water1" type="text" onChange="messme(), saveParametr()"></td>
 										<td id="sWater" onClick="messme()"></td>
 									</tr><tr  id="rows5">
 										<td onClick="messme()">Стоки </td>
@@ -221,8 +332,8 @@
 										<td id="bHwater"></td>
 										<td  class="cdate">01.2014</td>
 										<td></td>
-										<td><input class="form-control" id="Hwater2" type="text" onChange="messme(), saveParametr()"></td>
-										<td><input class="form-control" id="Hwater1" type="text" onChange="messme(), saveParametr()"></td>
+										<td><input class="form-control inputArea" id="Hwater2" type="text" onChange="messme(), saveParametr()"></td>
+										<td><input class="form-control inputArea" id="Hwater1" type="text" onChange="messme(), saveParametr()"></td>
 										<td  id="sHwater" onClick="messme()"></td>
 									</tr><tr  id="rows8">
 										<td onClick="messme()"> Вывоз ТБО </td>
@@ -279,15 +390,23 @@
 				
 			</div>
 		</div>
-	</div>
-	
-	<div class="row">
+		
+		<div class="row">
                <div class="col-xs-12">
-
+					<p>Внимание! Это тестовая версия программы. 
+					<br>Разработано на компьютере AMD Athlon 64x2 Dual Core Processor 3800+ 2ГГц, 2ГБ ОЗУ, любезно предоставленным Вадимом.
+					<br>Рекомендовано для свободного применения. Использованы технологии HTML, CSS, JS, jQuery, Twitter Bootstrap. 
+					Информация сохраняется на устройстве пользователя с использованием cookies. 
+					Для корректной работы программы в настройках броузера должна быть включена поддержка JavaScript и cookies.
+					<br>По всем вопросам обращайтесь к разработчику: sergedone@mail.ru
+					</p>
 
 
                </div>
        </div>
+	</div>
+	
+	
 			
 		
 
